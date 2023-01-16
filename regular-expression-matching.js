@@ -6,21 +6,28 @@
  * @param {string} p
  * @return {boolean}
  */
+
 var isMatch = function(s, p) {
-    // If they're equal quickly signal that a match is found
-    if (s == p) {
-        return true;
-    }
+    // Kick off the program at the beginning of both string and pattern.
+    return IsMatchRecursion(s, p, 0, 0);
 };
-/* 
-variable that holds the current string index that needs matching
-variable that holds the current pattern index that needs matching
-variable that holds the previous string character
-loop through the pattern 
- If the letters are equal continue to the next letter
- If pattern is a  . Move to the next character and update the preceeding character variable to .
- if pattern is * compare the current string character to the previous character. 
- if the previous character is a . and there are no more characters in the pattern return match found. 
- if the previous character is a . and there are more non asterisk characters in the pattern look for the next pattern character in the stringa
- else if they are the same character then start a subfunction call that looks forward in the string and moves the string index to the next character that is not a repeat.
-*/
+
+// A recursive function that checks the string against the pattern incrementally.
+let IsMatchRecursion = function (string, pattern, stringIndex, patternIndex) {
+    // If we are at the end of the pattern, return whether we are also at the end of string.
+
+    // If pattern character is omissible, skip forward two characters and recur.
+
+        // If omission does not produce a match, enter incremental comparison loop.
+            // Move forward one string character and two pattern characters.
+            // If this produces a match, program can stop.
+            // If it does not produce a match, move to next string character,
+            // compare, and, possibly, recur.
+    
+    // If pattern character was not repeatable or omissible and matches the string, increment
+    // indices and recur.
+    
+    // If none of the above hold true, return false.
+    
+    
+}
