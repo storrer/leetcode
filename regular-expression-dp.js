@@ -1,4 +1,7 @@
+// Regular Expression Matching:
+// https://leetcode.com/problems/regular-expression-matching/
 
+// Explanation follows function definition
 function isMatch(s, p) {
     // Create a 2D array for the dynamic programming solution
     let dp = new Array(s.length + 1);
@@ -52,10 +55,11 @@ function isMatch(s, p) {
     return dp[0][0];
 }
 
-/*This implementation is very similar to the Java one, it uses a 2D boolean 
-array dp[][] where dp[i][j] represents whether the input string s up to index i 
-matches the pattern p up to index j. The base case is when the pattern is empty, in which case the function 
-returns true if the input string is also empty, i.e dp[s.length][p.length] = true.
+/*
+This implementation uses a 2D booleanarray dp[][] where dp[i][j] represents whether 
+the input string s up to index i matches the pattern p up to index j. The base case 
+is when the pattern is empty, in which case the function returns true if the input 
+string is also empty, i.e dp[s.length][p.length] = true.
 
 The program iterates over dp array in reverse order, starting from the last 
 index of both the string and the pattern, and for each index, it checks if the 
